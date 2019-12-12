@@ -2,7 +2,7 @@
 
 function updateOpacity() {
 	document.getElementById("span-opacity").innerHTML = document.getElementById("sld-opacity").value;
-	temperaturaLayer.setOpacity(document.getElementById("sld-opacity").value);
+	Orosi8Layer.setOpacity(document.getElementById("sld-opacity").value);
 }
 
 function estilo_vias(feature) {
