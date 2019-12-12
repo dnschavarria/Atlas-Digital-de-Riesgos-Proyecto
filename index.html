@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapa de Leaflet</title>   
+
+	<!-- Hoja de estilos CSS de Leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>	
+	<!-- Biblioteca JS de Leaflet -->
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>	
+	<!-- Complemento Leaflet-providers -->
+	<script src="js/leaflet-providers.js"></script>	
+	<!-- Complemento Leaflet-choropleth -->
+    <script src="js/choropleth.js"></script>	
+	<!-- Hoja de estilos CSS adicionales -->
+	<link rel="stylesheet" href="css/estilos.css"/>	
+
+	<!-- En HTML: enlace a Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	crossorigin="anonymous" />
+	
+	<!-- Enlace a biblioteca JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+	</script>
+	
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/trueno" type="text/css"/>
+	
+</head>
+<body>
+	
+	<h1>&nbsp Atlas digital de riesgos</h1>
+
+	<div class="row">
+		<div class="column left">
+		<h2>Descripición Orosí-Cachí</h2>
+		<p>La problemática principal conocida es que se trata de una comunidad desarrollada linealmente a lo largo de un cono de deyección con características torrenciales de muy alta energía. El espesor de los depósitos sedimentarios el calibre de los materiales y la pendiente misma del cono así lo revelan.</p>
+		<p>Para el mapeo de estructuras, infraestructura e edificaciones así como uso del suelo y algunas amenazas presentes se han realzado numerosas giras y un total de 12 vuelos con “drone”. Algunos de esos vuelos no dieron resultados apropiados especialmente por desenfoque de la cámara pero nueve de ellos fueron exitosos y permitieron cubrir la parte más sensible de las comunidades que habitan en la microcuenca del río Naranjo.</p>
+		<p>Durante las visitas se ha conversado de manera no formal con algunos vecinos del área para ir conociendo un mínimo de las problemáticas que afrontan y el lugar que ocupa en sus preocupaciones el tema de lo que nosotros llamamos amenazas. Así hemos aprendido que efectivamente ha habido crecidas recientes aún muy frescas en la memora de los habitantes las cuales han afectado total o parcialmente sus viviendas y otros bienes.</p>
+		<img src="Cachi3D.png" alt="Trulli" width="700" height="400">
+		<p>Diseño y desarrollo web:</p>
+			<ul>
+			<li>Adriana Ibarra Vargas</li>
+			<li>Dennis Chavarría Córdoba</li>
+			<li>Ana Julieta Calvo Obando</li>
+			</ul>  
+	</div>
+	
+	<div class="column middle">
+	<p></p>
+	</div>
+	
+	<div class="column right">
+		<h2>Visor Web</h2>
+		
+			<div id="panel" style = "margin-left:0px; background-color:#D3D3D3;">
+					<label>Selecciona un tipo de amenidad</label>
+					<select id="estilo" onchange="estiloSelect()">
+					  <option value="Delegacion de policia" >Delegacion de policia</option>
+					  <option value="Hotel">Hotel</option>
+					  <option value="Restaurante" >Restaurante</option>
+					  <option value="Supermercado" >Supermercado</option>
+					  <option value="Tienda" >Tienda</option>
+					  <option value="TODOS"  >Todos</option>
+					</select>
+		    </div>		
+		
+		<!-- Elemento div para contener el mapa -->
+		<div id="mapid"></div>	
+		<p>Fuente: Elaboración propia, Sistema Nacional de Información Territorial</p>	
+		
+
+		
+		<!-- Código principal en JS -->
+		<script src="js/scripts.js"></script>			
+		
+		<!-- Controles para la opacidad de la capa de temperatura -->
+		<h5>Opacidad de la capa de ortofoto: <span id="span-opacity">0.5</span></h5>
+		<input type='range' id='sld-opacity' min='0' max='1' step='0.1' value='0.5' onchange='updateOpacity();'>		
+		
+		</div>
+	</div>
+	
+</body>
+</html>
